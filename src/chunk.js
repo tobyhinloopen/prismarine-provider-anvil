@@ -47,6 +47,9 @@ function writeSections (chunk) {
 }
 
 function readSection (chunk, { Y, Blocks, Add, Data, BlockLight, SkyLight }) {
+  if (Y < 0) {
+    return;
+  }
   readBlocks(chunk, Y, Blocks)
   readSkyLight(chunk, Y, SkyLight)
   readBlockLight(chunk, Y, BlockLight)
